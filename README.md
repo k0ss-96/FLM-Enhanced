@@ -1,3 +1,20 @@
+# FLM-Enhanced
+Is an improved version of AMD's Frame Latency Meter with some small changes that should positively affect your experience. This program is quite comfy for use with multiple monitors, but not with single monitor setup. That's why I added a simple overlay so you can monitor the performance in real time.
+
+# Important clarification: 
+the overlay will be shown only if the game is running in window mode, in full-screen mode it cannot be shown on top of the game (I'm sorry that the implementation of the overlay is very simple and therefore limited, but I'm unlikely to do better because I am zero in programming.    
+P.s. thanks Gemini, this project would never have happened without him)
+
+Also, FLM has 2 modes of measurement, whith FG in mind and without. In order to change it, you need to go into the settings every single time and save ini, which takes time and requires you to leave the game. So I also added a hotkey so you can change the mode of measurement without leaving the game.
+
+# About accuracy
+I compared the latency stats between FLM and PC latency via Nvidia overlay. In my case, the results are not stable, perhaps due to DXGI. FLM showed about 20% more frames than the game is actually rendered, and latency rates are lower than Nvidia overlay by 2-6ms. Given that Nvidia PC latency metric only works in games with reflex implementation, FLM really makes sense if super accurate results are not needed (of course both of them won't measure better than a hardware LDAT sensor)
+
+A different story with the AMF (Advanced Media Framework), which only works on an AMD card. Unlike DXGI, AMF does a better job of capturing, so there is no "phantom frame" problem. It is likely that the accuracy of the metrics is also better, but it is not possible to compare with Nvidia overlay for obvious reasons.
+
+For more info about requirements or Limitations feel free to visit the [official](https://github.com/GPUOpen-Tools/frame_latency_meter) GitHub of this Project (or read the official README down below)
+
+
 # frame latency meter
 The performance of a gaming system is critical to the overall gaming experience. One of the key factors that can impact the performance of a gaming system is the latency of the mouse response time. Measuring the latency of the mouse response time is important to ensure that the gaming system is performing optimally. However, traditional methods of measuring the latency of the mouse response time can be expensive and require additional hardware. 
 
