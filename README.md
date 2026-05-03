@@ -7,6 +7,9 @@ P.s. thanks Gemini, this project would never have happened without him)
 
 Also, FLM has 2 modes of measurement, whith FG in mind and without. In order to change it, you need to go into the settings every single time and save ini, which takes time and requires you to leave the game. So I also added a hotkey so you can change the mode of measurement without leaving the game.
 
+# Frame generation metods
+FLM dont give a shit, wether FG implementet natively into the game, via Optiscaler, driver implementation (I tested AFMF2.1) or even LossLess Scaling FG. It can deal with every of them no matter what, but there is one catch. If your FPS is higher then your monitor refresh rate, both DXGI amd AMF capture will not see them, so the latency numbers coud be more inaccurate.
+
 # About accuracy
 I compared the latency stats between FLM and PC latency via Nvidia overlay. In my case, the results are not stable, perhaps due to DXGI. FLM showed about 20% more frames than the game is actually rendered, and latency rates are lower than Nvidia overlay by 2-6ms. Given that Nvidia PC latency metric only works in games with reflex implementation, FLM really makes sense if super accurate results are not needed (of course both of them won't measure better than a hardware LDAT sensor)
 
