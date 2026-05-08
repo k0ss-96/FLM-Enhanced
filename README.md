@@ -8,12 +8,11 @@ P.s. thanks Gemini, this project would never have happened without him)
 Also, FLM has 2 modes of measurement, whith FG in mind and without. In order to change it, you need to go into the settings every single time and save ini, which takes time and requires you to leave the game. So I also added a hotkey so you can change the mode of measurement without leaving the game.
 
 # Frame generation metods
-FLM doesn't give a shit whether FG is implementet natively into the game, via Optiscaler, driver implementation (I tested AFMF2.1) or even LossLess Scaling FG. It can deal with every one of them no matter what, but there is one catch. If your FPS is higher than your monitor refresh rate, both DXGI and AMF capture will not see them, so the latency numbers could be more inaccurate.
+FLM doesn't give a shit whether FG is implementet natively into the game, via Optiscaler, driver implementation (I tested AFMF2.1) or even LossLess Scaling FG. It can deal with every one of them no matter what, but there is one catch. If your FPS is higher than your monitor refresh rate, both DXGI and AMF capture will not see them. As far as I saw, it has a little to no difference in accuracy, but I'm not sure
 
 # About accuracy
-I compared the latency stats between FLM and PC latency via Nvidia overlay. In my case, the results are not stable, perhaps due to DXGI. FLM showed about 20% more frames than the game is actually rendered, and latency rates are lower than Nvidia overlay by 2-6ms. Given that Nvidia PC latency metric only works in games with reflex implementation, FLM really makes sense if super accurate results are not needed (of course both of them won't measure better than a hardware LDAT sensor)
-
-A different story with the AMF (Advanced Media Framework), which only works on an AMD card. Unlike DXGI, AMF does a better job of capturing, so there is no "phantom frame" problem. It is likely that the accuracy of the metrics is also better, but it is not possible to compare with Nvidia overlay for obvious reasons.
+I compared latency statistics to Nvidia PC latency metric via driver/overlay (or whatever it called). If you take Nvidia as a baseline, FLM usualy shows 2-6 ms less. There were some cases where the difference in the indicators was at the level of negligible difference of both (within 1-2ms in both directions) all tests were conducted in Dying light: the Beast with different FPS and without a frame generation (in my case Nvidia overlay does`nt want to show latency when FSR FG is enabled and yes, I would like to test DLSS FG, but RTX3060 Laptop does not support it)
+I also noticed that FLM often shows framerates incorrectly in both DXGI capture mode (on my Laptop) and AMF on my main RX7800XT system. However, from my observations, this also has almost no effect on latency indicators.
 
 For more info about requirements or Limitations feel free to visit the [official](https://github.com/GPUOpen-Tools/frame_latency_meter) GitHub of this Project (or read the official README down below)
 
